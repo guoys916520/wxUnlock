@@ -151,3 +151,13 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+
+.imagesize{
+ display:flex;                   
+ justify-content: center;        
+}
+.imagesize image { 
+  width:150rpx;
+  height:150rpx;
+  }
+  

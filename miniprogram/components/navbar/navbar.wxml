@@ -1,0 +1,19 @@
+<!--navbar.wxml-->
+<view>
+  <view class="nav-bar {{isWhite=='true'?'nav-bar-white':''}}" style="height: {{navHeight}}px;background-color:{{navColor}};" catchtap="toTop">
+    <text class="navbar-title" style="top:{{navTitleTop}}px;color:{{navTitleColor}};">{{navTitle}}</text>
+    <view wx:if="{{noArrow=='false'&&isArrowWhite=='false'&&isNavHome=='false'}}" catchtap="navBack" class="navbar-icon-wrap" style="top:{{navTitleTop}}px;">
+      <image class="navbar-icon" src="../../images/arrow_left.png"></image>
+    </view>
+    <view wx:if="{{isArrowWhite=='true'&&isNavHome=='false'&&noArrow=='false'}}"  catchtap="navBack" class="navbar-icon-wrap" style="top:{{navTitleTop}}px;">
+      <image src="../../images/arrow_left_white.png" class="navbar-icon"></image>
+    </view>
+    <view wx:if="{{isNavHome=='true'&&isArrowWhite=='false'&&noArrow=='false'}}" catchtap="navHome" class="navbar-icon-wrap" style="top:{{navTitleTop}}px;">
+      <image src="../../images/Home@3x.png" class="navbar-icon"></image>
+    </view>
+    <view wx:if="{{isNavHome=='true'&&isArrowWhite=='true'&&noArrow=='false'}}"  catchtap="navHome" class="navbar-icon-wrap" style="top:{{navTitleTop}}px;">
+      <image src="../../images/Home@3x_white.png" class="navbar-icon"></image>
+    </view>
+  </view>
+  <view wx:if="{{isWhite=='true'}}" class="nav-bar-place" style="height: {{navHeight}}px;background-color:{{navColor}};"></view>
+</view>

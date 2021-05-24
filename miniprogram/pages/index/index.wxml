@@ -1,28 +1,56 @@
 <view class="page-body">
+<navbar navTitle="授权登录" noArrow="true"></navbar>
   <view class="page-body-wrapper">
-    <camera device-position="front" flash="off" binderror="error" style="width:100%;height:{{windowWidth}}px;"></camera>
-    <canvas wx:if="{{canvasshow}}" style="width: 100%;height:{{windowWidth}}px;position:absolute;" canvas-id="canvas"></canvas>
+    <!-- <camera device-position="front" flash="off" binderror="error" style="width:100%;height:{{windowWidth}}px;"></camera>
+    <canvas wx:if="{{canvasshow}}" style="width: 100%;height:{{windowWidth}}px;position:absolute;" canvas-id="canvas"></canvas> -->
     <!-- <view class="btn-area">
       <button type="primary" bindtap="track" style='background-color:#31859c;' data-trackshow="{{trackshow}}">{{trackshow}}</button>
     </view> -->
-    <view class="btn-area">
-      <button type="primary" bindtap="liveSearch" style='background-color:#31859c;'>进行人脸识别</button>
-    </view>
     <!-- <view class="btn-area">
-      <button type="primary" bindtap="startRecord" style='background-color:#31859c;'>开始录像</button>
-    </view>
-    <view class="btn-area">
-      <button type="primary" bindtap="stopRecord" style='background-color:#31859c;'>结束录像</button>
+      <button type="primary" bindtap="liveSearch" style='background-color:#31859c;'>进行人脸识别</button>
     </view> -->
-    <view  wx:if="{{src}}" class="preview-tips">识别结果:{{who}}</view>
-    <view wx:if="{{src}}" style='display:flex;width:100%;justify-content:center;'>
-      <image  mode="aspectFit" src="{{src}}"  style='width:50%;height:{{windowWidth/2}}px;'></image>
-      <canvas  style="width: 50%;height:{{windowWidth/2}}px;position:absolute;" canvas-id="canvasresult"></canvas>
-    </view>
-    <!-- <view wx:if="{{videoSrc}}" class="preview-tips">视频预览</view>
-    <video wx:if="{{videoSrc}}" poster="{{fengmian}}" class="video" src="{{videoSrc}}"></video>
-    <view wx:if="{{videoSrc}}" class="btn-area">
-      <button type="primary" bindtap="uploadRecord" style='background-color:#31859c;'>上传该录像</button>
-    </view> -->
+
+    <!-- <view  wx:if="{{src}}" class="preview-tips">识别结果:{{who}}</view> -->
+    <!-- <view wx:if="{{src}}" style='display:flex;width:100%;justify-content:center;'> -->
+      <!-- <image  mode="aspectFit" src="{{src}}"  style='width:50%;height:{{windowWidth/2}}px;'></image> -->
+      <!-- <canvas  style="width: 50%;height:{{windowWidth/2}}px;position:absolute;" canvas-id="canvasresult"></canvas> -->
+    <!-- </view> -->
+    <!-- 需要使用 button 来授权登录 -->
+<view class="imagesize">
+			<image src="../../images/smgj.png" class='in-image'></image>
+		</view>
+<view class="weui-form__text-area">
+      <text>\n</text>
+        <h1 style="font-weight:700">实名管家</h1>
+		</view>
+
+    <view class="weui-form__text-area">
+    <text>\n</text>
+        <h3 style="font-weight:600">请确认以下授权信息</h3>
+		</view>
+    <view class="weui-form__text-area">
+    <text>\n</text>
+        <text style="font-size:14">获取你的信息(手机号、头像、信息等)</text>
+        <text>\n</text>
+        <text>\n</text>
+        <text>\n</text>
+        <text>\n</text>
+        <text>\n</text>
+		</view>
+<!-- <button
+ wx:if="{{canIUse}}"
+ open-type="getUserInfo"
+ bindgetuserinfo="bindGetUserInfo"
+ type="primary"
+>
+ 授权
+</button> -->
+	<!-- <a class="weui-btn weui-btn_primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权登录</a> -->
+<button class="weui-btn weui-btn_primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >快捷登录</button>
+<button bindtap='btnreg'> 注册须知 </button>
   </view>
+  <!-- <view>
+    <label>获取服务器参数：</label>
+    <textarea id="attr">{{param}}</textarea>
+  </view> -->
 </view>
